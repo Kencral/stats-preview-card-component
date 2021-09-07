@@ -24,7 +24,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [My solution](https://github.com/Kencral/stats-preview-card-component)
-- Live Site URL: [live](https://your-live-site-url.com)
+- Live Site URL: [live](https://kencral.github.io/stats-preview-card-component)
 
 ## My process
 
