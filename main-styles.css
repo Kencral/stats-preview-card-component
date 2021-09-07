@@ -16,6 +16,7 @@ font-family: 'Lexend Deca',sans-serif;
   font-family: "Inter", sans-serif;
   font-size: 15px;
   color: white;
+  box-sizing: border-box;
 }
 
 body {
@@ -36,37 +37,41 @@ body {
   text-align: center;
   width: 90%;
   background: #1b1938;
-  border-radius: 2%;
+  border-radius: 25px;
+  max-width: 500px;
 }
-.wrapper .card-component .card-header {
+.wrapper .card-component .text-container {
+  width: 100%;
+}
+.wrapper .card-component .text-container .card-header {
   font-size: 1.8rem;
   padding: 1rem 2rem;
   margin: 0;
 }
-.wrapper .card-component .card-header .highlighted-words {
+.wrapper .card-component .text-container .card-header .highlighted-words {
   font-size: 1.8rem;
   color: #aa5cdb;
 }
-.wrapper .card-component .card-info {
+.wrapper .card-component .text-container .card-info {
   color: rgba(255, 255, 255, 0.75);
   margin: 0;
   padding: 1rem 2rem;
   line-height: 1.6;
 }
-.wrapper .card-component .card-stats {
+.wrapper .card-component .text-container .card-stats {
   padding: 0;
   padding-bottom: 2rem;
   margin: 0;
   list-style: none;
 }
-.wrapper .card-component .card-stats .card-stat {
+.wrapper .card-component .text-container .card-stats .card-stat {
   font-size: 1.8rem;
   text-transform: uppercase;
 }
-.wrapper .card-component .card-stats .card-stat h1 {
+.wrapper .card-component .text-container .card-stats .card-stat h1 {
   font-size: 1.3rem;
 }
-.wrapper .card-component .card-stats .card-stat h2 {
+.wrapper .card-component .text-container .card-stats .card-stat h2 {
   color: rgba(255, 255, 255, 0.6);
   font-size: 0.7rem;
 }
@@ -74,6 +79,7 @@ body {
 .img-container {
   width: 100%;
   height: 74%;
+  position: relative;
 }
 .img-container img {
   width: 100%;
@@ -85,12 +91,54 @@ body {
   content: " ";
   width: 100%;
   height: 100%;
-  position: relative;
+  top: 0;
+  left: 0;
+  position: absolute;
   z-index: 1;
   display: inline-block;
-  top: -101.5%;
   border-radius: 2% 2% 0 0;
   opacity: 0.75;
+}
+
+@media (min-width: 1440px) {
+  .wrapper .card-component {
+    flex-direction: row-reverse;
+    max-width: 1700px;
+  }
+  .wrapper .card-component .img-container {
+    height: 100%;
+  }
+  .wrapper .card-component .img-container img {
+    border-radius: 0 25px 25px 0;
+  }
+  .wrapper .card-component .img-container::after {
+    border-radius: 0 25px 25px 0;
+  }
+  .wrapper .card-component .text-container .card-header {
+    text-align: initial;
+    font-size: 2.8rem;
+    padding: 1rem 5rem;
+  }
+  .wrapper .card-component .text-container .card-header .highlighted-words {
+    font-size: inherit;
+  }
+  .wrapper .card-component .text-container .card-info {
+    padding: 1rem 5rem;
+    font-size: 1.3rem;
+    text-align: initial;
+  }
+  .wrapper .card-component .text-container .card-stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 2.5rem 0 0 0;
+  }
+  .wrapper .card-component .text-container .card-stats .card-stat h1 {
+    font-size: 1.8rem;
+  }
+  .wrapper .card-component .text-container .card-stats .card-stat h2 {
+    font-size: 1rem;
+  }
 }
 
 /*# sourceMappingURL=main-styles.css.map */
